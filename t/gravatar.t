@@ -5,13 +5,16 @@ is gravatar_id('whatever@wherever.whichever'), 'a60fc0828e808b9a6a9d50f1792240c8
 
 throws-like { gravatar_url() }, X::AdHoc, 'throw gravatar_url without email';
 
+# is gravatar_url('whatever@wherever.whichever'),
+#     'http://www.gravatar.com/avatar/a60fc0828e808b9a6a9d50f1792240c8', 'email 1 ok';
+
 is gravatar_url(
     :email<whatever@wherever.whichever>
-), 'http://www.gravatar.com/avatar/a60fc0828e808b9a6a9d50f1792240c8';
+), 'http://www.gravatar.com/avatar/a60fc0828e808b9a6a9d50f1792240c8', 'email ok';
 
 is gravatar_url(
     :email<a60fc0828e808b9a6a9d50f1792240c8>
-), 'http://www.gravatar.com/avatar/a60fc0828e808b9a6a9d50f1792240c8';
+), 'http://www.gravatar.com/avatar/a60fc0828e808b9a6a9d50f1792240c8', 'id ok';
 
 is gravatar_url(
     :email<whatever@wherever.whichever>,
@@ -43,3 +46,5 @@ is gravatar_url(
     :size<80>,
     :short_keys<0>
 ), 'http://www.gravatar.com/avatar/a60fc0828e808b9a6a9d50f1792240c8?rating=r&size=80&default=%2Flocal.png', 'short_key';
+
+done-testing();

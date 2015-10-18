@@ -11,6 +11,11 @@ my $gravatar_id = gravatar_id('whatever@wherever.whichever'); # 'a60fc0828e808b9
 
 my $gravator_url = gravatar_url(
     :email<whatever@wherever.whichever>,
+    :size<32>
+);
+
+my $gravator_url = gravatar_url(
+    :email<whatever@wherever.whichever>,
     default => '/local.png',
     :rating<R>,
     :size<80>,
